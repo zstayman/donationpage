@@ -5,7 +5,7 @@
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     // This identifies your website in the createToken call below
-    Stripe.setPublishableKey('pk_test_3z6naZG2ljWmZfMlhBq0C1qV');
+    Stripe.setPublishableKey(<%= Rails.configuration.stripe[:publishable_key] %>);
 
     var stripeResponseHandler = function(status, response) {
       var $form = $('#payment-form');
@@ -19,6 +19,7 @@
         // Insert the token into the form so it gets submitted to the server
         $form.append($('<input type="hidden" name="stripeToken" />').val(token));
         // and re-submit
+        debugger;
         $form.get(0).submit();
       }
     };

@@ -42,3 +42,5 @@ gem 'awesome_print'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'pry-rails'
+
+gem 'httparty'

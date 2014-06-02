@@ -19,7 +19,6 @@
         // Insert the token into the form so it gets submitted to the server
         $form.append($('<input type="hidden" name="stripeToken" />').val(token));
         // and re-submit
-        debugger;
         $form.get(0).submit();
       }
     };
@@ -37,6 +36,8 @@
         return false;
       });
     });
+
+
     </script>
   </head>
   <body>
@@ -49,11 +50,13 @@
       <div class="form-row">
         <label>
           <span>Amount</span>
-          <input type="radio" name="amount" value="2500"> $25
-          <input type="radio" name="amount" value="5000"> $50
-          <input type="radio" name="amount" value="10000"> $100
-          <input type="radio" name="amount" value="25000"> $250
-          <input type="radio" name="amount" value="50000"> $500
+          <input type="radio" name="amount" value="25"> $25
+          <input type="radio" name="amount" value="50"> $50
+          <input type="radio" name="amount" value="100"> $100
+          <input type="radio" name="amount" value="250"> $250
+          <input type="radio" name="amount" value="500"> $500
+          <input type="radio" name="amount" value="100"> $1000
+          <input type="radio" name="amount" value="0" id="other"> Other <input type="text" id="entry">
         </label>
       </div>
       <div class="form-row">
@@ -81,3 +84,8 @@
 
       <button type="submit">Submit Payment</button>
     </form>
+<script>
+  $("#entry").on("keyup", function(){
+      $("#other").val(this.value);
+    });
+</script>

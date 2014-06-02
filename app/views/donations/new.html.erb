@@ -46,7 +46,29 @@
     <form action="/donation" method="POST" id="payment-form">
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
       <span class="payment-errors"></span>
-
+      <div class="form-row">
+        <label>
+          <span>First Name</span>
+          <input type="text" size="20" name="first_name"/>
+          <span>Last Name</span>
+          <input type="text" size="20" name="last_name"/>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Address</span><br>
+          <input type="text" size="100" name="address_1"/><br>
+          <input type="text" size="100" name="address_2"/>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>City</span>
+          <input type="text" size="20" name="city"/>
+          <span>State</span>
+          <input type="text" size="20" name="state"/>
+        </label>
+      </div>
       <div class="form-row">
         <label>
           <span>Amount</span>

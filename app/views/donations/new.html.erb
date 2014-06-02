@@ -44,7 +44,7 @@
 
     <form action="/donation" method="POST" id="payment-form">
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-      <span class="payment-errors"></span>
+      <span class="payment-errors"><%= flash[:error] %></span>
       <div class="form-row">
         <label>
           <span>First Name</span>

@@ -11,7 +11,6 @@ class DonationsController < ApplicationController
     redirect_to request.referer
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    render json: flash[:error]
-
+    redirect_to request.referer
   end
 end

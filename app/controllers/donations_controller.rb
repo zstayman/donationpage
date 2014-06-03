@@ -20,9 +20,9 @@ class DonationsController < ApplicationController
       city: params[:city],
       state: params[:state].downcase
     }
-    binding.pry
     time = Time.now.to_i
     HTTParty.post("https://trujillo.cp.bsd.net/page/api/contribution/add_external_contribution?api_ver=2&api_id=Signup-Donation&api_ts=#{time}&api_mac=#{hashify(donation)}", donation.to_json)
+    binding.pyr
     redirect_to request.referer
   rescue Stripe::CardError => e
     flash[:error] = e.message

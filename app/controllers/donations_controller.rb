@@ -19,9 +19,10 @@ class DonationsController < ApplicationController
       addr2: params[:address_2],
       city: params[:city],
       state: params[:state].downcase
-    }.to_json
+    }
     binding.pry
-    HTTParty.post("", donation)
+    time = Time.now.to_i
+    HTTParty.post("https://trujillo.cp.bsd.net/page/api/contribution/add_external_contribution?api_ver=2&api_id=Signup-Donation&api_ts=#{time}&api_mac=#{hashify(donation)}", donation.to_json)
     redirect_to request.referer
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -39,5 +40,14 @@ class DonationsController < ApplicationController
     }
 
     return cards[type]
+  end
+
+  def hashify(donation)
+    signing_string = "Signup-Donation\ntime\n/page/api/contribution/add_external_contribution\napi_version=2&api_id"
+    donation.each do |key, value|
+      signing_string += "&#{key.to_s}=#{value}"
+    end
+    api_mac = OpenSSL::HMAC.hexdigest("sha1", BSD_SECRET, signing_string)
+    return api_mac
   end
 end

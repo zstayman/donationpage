@@ -8,11 +8,12 @@ class DonationsController < ApplicationController
       card: params[:stripeToken],
       description: "TEST Web Donation",
       )
+    @time = Time.now.to_i
     donation = {
       external_id: charge["id"],
       firstname: params[:first_name],
       lastname: params[:last_name],
-      transaction_dt: Time.now.to_s,
+      transaction_dt: Time.now.to_s.split.slice(0..1).join(" "),
       amount: params[:amount].to_i,
       cc_type_cd: cc_conversion(charge["card"]["type"]),
       addr1: params[:address_1],
@@ -20,9 +21,8 @@ class DonationsController < ApplicationController
       city: params[:city],
       state: params[:state].downcase
     }
-    time = Time.now.to_i
-    HTTParty.post("https://trujillo.cp.bsd.net/page/api/contribution/add_external_contribution?api_ver=2&api_id=Signup-Donation&api_ts=#{time}&api_mac=#{hashify(donation)}", donation.to_json)
-    binding.pyr
+    binding.pry
+    HTTParty.post("https://trujillo.cp.bsd.net/page/api/contribution/add_external_contribution?api_ver=2&api_id=Signup-Donation&api_ts=#{@time}&api_mac=#{hashify(donation)}", donation)
     redirect_to request.referer
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -43,7 +43,10 @@ class DonationsController < ApplicationController
   end
 
   def hashify(donation)
-    signing_string = "Signup-Donation\ntime\n/page/api/contribution/add_external_contribution\napi_version=2&api_id"
+    signing_string = "Signup-Donation
+    #{@time}
+    /page/api/contribution/add_external_contribution
+    api_version=2&api_id"
     donation.each do |key, value|
       signing_string += "&#{key.to_s}=#{value}"
     end

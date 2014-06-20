@@ -39,7 +39,7 @@ gem 'awesome_print'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 
 gem 'pry-rails'
 

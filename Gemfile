@@ -44,3 +44,5 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'pry-rails'
 
 gem 'httparty'
+
+gem 'blue_state_digital', git: "https://github.com/controlshift/blue_state_digital"

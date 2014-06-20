@@ -1,4 +1,17 @@
 GIT
+  remote: https://github.com/controlshift/blue_state_digital
+  revision: b742fa966a3e0698f26d769d2d0d660ab023a3b3
+  specs:
+    blue_state_digital (0.5.4)
+      activemodel
+      activesupport
+      builder
+      crack
+      faraday (= 0.8.9)
+      hashie
+      nokogiri
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 79cdeb054539909102fa29df94a97bfb435ac909
   specs:
@@ -47,8 +60,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     erubis (2.7.0)
     execjs (2.1.0)
+    faraday (0.8.9)
+      multipart-post (~> 1.2.0)
+    hashie (3.0.0)
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
@@ -66,9 +84,13 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    multipart-post (1.2.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     polyglot (0.3.5)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -99,6 +121,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -139,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  blue_state_digital!
   coffee-rails (~> 4.0.0)
   httparty
   jbuilder (~> 2.0)

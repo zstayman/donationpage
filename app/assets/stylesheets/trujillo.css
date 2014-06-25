@@ -1,0 +1,131 @@
+@media only screen and (min-device-width: 768px){
+  .donate {
+    padding: 10px 30px;
+    font-weight: bold;
+  }
+}
+#name {
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+.jumbo {
+  margin-top: 15%!important;
+}
+
+img.logo {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.paid-for {
+  border: 1px solid white;
+  padding: 2px 5px;
+}
+.disclaimer {
+  margin-top:10px;
+}
+.join {
+  height: inherit!important;
+}
+.bio-link {
+  font-family: Montserrat;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.bio-link:hover {
+  color: rgb(255,222,0);
+  text-decoration: none;
+}
+
+.bio-up {
+  margin-top: 33px;
+  -webkit-transition: margin-top .3s, color .3s;
+  transition: margin-top .3s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.bio-down {
+  margin-top: 25px;
+  color: #0049A4;
+  -webkit-transition: margin-top .3s, color .3s;
+  transition: margin-top .3s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.donate-up {
+  margin-top: 8px;
+  -webkit-transition: margin-top .3s;
+  transition: margin-top .3s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.donate-down {
+  margin-top: -3px;
+  -webkit-transition: margin-top .3s;
+  transition: margin-top .3s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+
+}
+.bio {
+  margin-top: -20px;
+
+}
+#footer-name {
+  text-transform: inherit;
+}
+#contact {
+  background: #284D69;
+}
+
+.cbp-af-header.cbp-af-header-shrink h1 a{
+  color: #0049a4;
+}
+
+#featured2 {
+  padding-top: 125px;
+  margin-bottom: 0px;
+  padding-bottom: 30px;
+}
+
+#bio {
+  padding-top: 35px;
+}
+#nav {
+  background-color: white;
+}
+#name {
+  color: #0049a4;
+}
+
+.jumbotron {
+  background-color: #face00;
+  margin-bottom: 0;
+}
+.bio-img {
+  max-height: 215px;
+}
+#text {
+  padding-top: 25px;
+}
+
+@media only screen and (min-device-width: 768px){
+  #phone-img{
+    margin: 0 auto!important;
+  }
+}
+
+.cbp-af-header {
+  height: 100px !important;
+}
+
+div {
+  text-align: center;
+}

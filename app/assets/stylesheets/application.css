@@ -11,5 +11,9 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require component
+ *= require bootstrap-theme
+ *= require bootstrap
+ *= require trujillo
  *= require_self
  */

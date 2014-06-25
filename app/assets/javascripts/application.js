@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require modernizr
+//= require bootstrap
+//= require classie
+//= require animated-header
 //= require_tree .

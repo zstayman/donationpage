@@ -9,14 +9,14 @@ class DonationsController < ApplicationController
       description: "TEST Web Donation",
       )
 
-    cont = BlueStateDigital::Contribution.new(connection: $CONNECTION,
-                                              external_id: charge["id"],
-                                              firstname: params[:first_name],
-                                              lastname: params[:last_name],
-                                              transaction_amt: params[:amount].to_i,
-                                              cc_type_cd: cc_conversion(charge["card"]["brand"]),
-                                              transaction_dt: DateTime.now.to_s
-                                              )
+    cont = BlueStateDigital::Contribution.new({connection: $CONNECTION,
+                                                external_id: charge["id"],
+                                                firstname: params[:first_name],
+                                                lastname: params[:last_name],
+                                                transaction_amt: params[:amount].to_i,
+                                                cc_type_cd: cc_conversion(charge["card"]["brand"]),
+                                                transaction_dt: DateTime.now.to_s
+                                              })
     cont.save
     redirect_to "http://www.kentrujillo.com"
   rescue Stripe::CardError => e
